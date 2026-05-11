@@ -36,11 +36,11 @@
                     <td><?= htmlspecialchars($phone->brand) ?></td>
                     <td><?= htmlspecialchars($phone->model) ?></td>
                     <td>$<?= htmlspecialchars($phone->price) ?></td>
-                    <td><?= htmlspecialchars($phone->screen) ?></td>
-                    <td><?= htmlspecialchars($phone->ram) ?></td>
-                    <td><?= htmlspecialchars($phone->storage) ?></td>
+                    <td><?= htmlspecialchars($phone->screen) ?>"</td>
+                    <td><?= htmlspecialchars($phone->ram) ?> GB</td>
+                    <td><?= htmlspecialchars($phone->storage) ?> GB</td>
                     <td><?= htmlspecialchars($phone->camera) ?></td>
-                    <td><?= htmlspecialchars($phone->battery) ?></td>
+                    <td><?= htmlspecialchars($phone->battery) ?> mAh</td>
                 </tr>
                 <?php endforeach; ?>
             <?php else: ?>
