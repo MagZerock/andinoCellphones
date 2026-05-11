@@ -1,0 +1,130 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 30px;
+    color: #333;
+}
+
+div[style*="display:flex"] {
+    width: 90%;
+    margin: 0 auto 20px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+form[method="get"] {
+    display: flex;
+    gap: 10px;
+}
+
+input[type="text"] {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+button[type="submit"] {
+    padding: 8px 16px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+a[href*="añadir.php"] {
+    padding: 8px 16px;
+    background: #28a745;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+a[href*="añadir.php"]:hover,
+button[type="submit"]:hover {
+    opacity: 0.85;
+}
+
+table {
+    width: 90%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+th, td {
+    padding: 12px 8px;
+    border: 1px solid #dee2e6;
+    text-align: left;
+}
+
+th {
+    background: #007bff;
+    color: #fff;
+}
+
+tr:nth-child(even) {
+    background: #f2f2f2;
+}
+.form-busqueda {
+    display: flex;
+    gap: 12px;
+    background: #fff;
+    padding: 18px 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 24px auto;
+    transition: box-shadow 0.2s;
+}
+
+.form-busqueda:focus-within {
+    box-shadow: 0 6px 24px rgba(0,123,255,0.15);
+}
+
+.form-busqueda input[type="text"] {
+    flex: 1;
+    padding: 12px 16px;
+    border: 1.5px solid #007bff;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+    background: #f9f9f9;
+}
+
+.form-busqueda input[type="text"]:focus {
+    border-color: #0056b3;
+    background: #fff;
+}
+
+.form-busqueda button[type="submit"] {
+    padding: 12px 24px;
+    background: linear-gradient(90deg, #007bff 60%, #0056b3 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,123,255,0.10);
+    transition: background 0.2s, transform 0.1s;
+}
+
+.form-busqueda button[type="submit"]:hover {
+    background: linear-gradient(90deg, #0056b3 60%, #007bff 100%);
+    transform: translateY(-2px) scale(1.03);
+}

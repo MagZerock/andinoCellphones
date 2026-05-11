@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Customer Form</title>
+	<link rel="stylesheet" href="../../public/css/index.css">
+</head>
+<body>
+	<nav class="navbar">
+        <div class="navbar__container">
+            <span class="navbar__logo">Cellphone System</span>
+            <ul class="navbar__menu">
+                <li><a href="../" class="active">View Cellphone</a></li>
+				<li><a href="../Vista/forms.html">Add CellPhone</a></li>
+            </ul>
+        </div>
+    </nav>
+	
+	<main class="page">
+		<section class="card">
+			<div class="card__header">
+				<h1>CellPhone Registration with ORM</h1>
+			</div>
+
+			<form class="customer-form" action="../controller/addCustomer.php" method="POST">
+				<div class="field">
+					<label for="brand">Brand</label>
+					<input type="text" id="brand" name="brand" placeholder="e.g. Samsung" minlength="4" maxlength="30" required>
+				</div>
+
+				<div class="field">
+					<label for="model">Model</label>
+					<input type="text" id="model" name="model" placeholder="e.g. S23" minlength="4" maxlength="30" required>
+				</div>
+
+				<div class="field">
+					<label for="price">Price</label>
+					<input type="number" id="price" name="price" required>
+				</div>
+
+				<div class="field">
+					<label for="ram">RAM</label>
+					<input type="number" id="ram" name="ram" required>
+				</div>
+
+				<div class="field">
+					<label for="storage">Storage</label>
+					<input type="number" id="storage" name="storage" min="0" max="120" placeholder="18" readonly>
+				</div>
+
+				<div class="field">
+					<label for="camera">Camera</label>
+					<input type="number" id="camera" name="camera" min="0" max="120" placeholder="18" readonly>
+				</div>
+
+				<div class="field">
+					<label for="battery">Battery</label>
+					<input type="number" id="Battery" name="storage" min="0" max="120" placeholder="18" readonly>
+				</div>
+
+				<div class="actions field--full">
+					<button type="reset" class="button button--ghost">Clear</button>
+					<button type="submit" class="button button--primary">Save Customer</button>
+				</div>
+			</form>
+		</section>
+		<footer class="site-footer">All rights reserved ESPE - Nelson Andino</footer>
+	</main>
+	<script src="../public/js/ageValidator.js"></script>
+</body>
+</html>
