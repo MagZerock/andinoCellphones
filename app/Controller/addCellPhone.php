@@ -1,12 +1,13 @@
 <?php
-require_once __DIR__ . '/../config/database.php';
-require_once __DIR__ . '/../model/Product.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
+require_once __DIR__ . '/../Config/conection.php';
+require_once __DIR__ . '/../Models/CellPhone.php';
 
-use App\model\Product;
+use App\Models\CellPhone;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
-        Product::create([
+        CellPhone::create([
             'brand'   => $_POST['brand'],
             'model'   => $_POST['model'],
             'price'   => $_POST['price'],
@@ -17,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'battery' => $_POST['battery']
         ]);
         
-        header("Location: ../view/saved.html"); 
+        header("Location: ../Vista/saved.html"); 
         exit();
 
     } catch (\Exception $e) {

@@ -1,73 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Customer Form</title>
-	<link rel="stylesheet" href="../../public/css/index.css">
-	<link rel="stylesheet" href="../../public/css/form.css">
+    <meta charset="UTF-8">
+    <title>Add CellPhone</title>
+    <link rel="stylesheet" href="../../public/css/index.css">
 </head>
 <body>
-	<nav class="navbar">
+    <nav class="navbar">
         <div class="navbar__container">
             <span class="navbar__logo">Cellphone System</span>
             <ul class="navbar__menu">
-                <li><a href="../" class="active">View Cellphone</a></li>
-				<li><a href="../Vista/forms.html">Add CellPhone</a></li>
+                <li><a href="../Controller/viewCellPhones.php">View Cellphones</a></li>
+				<li><a href="./form.html" class="active">Add CellPhone</a></li>
             </ul>
         </div>
     </nav>
-	
-	<main class="page">
-		<section class="card">
-			<div class="card__header">
-				<h1>CellPhone Registration with ORM</h1>
-			</div>
-
-			<form class="customer-form" action="../controller/addCellPhone.php" method="POST">
-				<div class="field">
-					<label for="brand">Brand</label>
-					<input type="text" id="brand" name="brand" placeholder="e.g. Samsung" minlength="4" maxlength="30" required>
-				</div>
-
-				<div class="field">
-					<label for="model">Model</label>
-					<input type="text" id="model" name="model" placeholder="e.g. S23" minlength="4" maxlength="30" required>
-				</div>
-
-				<div class="field">
-					<label for="price">Price</label>
-					<input type="number" id="price" name="price" required>
-				</div>
-
-				<div class="field">
-					<label for="ram">RAM</label>
-					<input type="number" id="ram" name="ram" required>
-				</div>
-
-				<div class="field">
-					<label for="storage">Storage</label>
-					<input type="number" id="storage" name="storage" min="0" max="120" placeholder="18" readonly>
-				</div>
-
-				<div class="field">
-					<label for="camera">Camera</label>
-					<input type="number" id="camera" name="camera" min="0" max="120" placeholder="18" readonly>
-				</div>
-
-				<div class="field">
-					<label for="battery">Battery</label>
-					<input type="number" id="Battery" name="storage" min="0" max="120" placeholder="18" readonly>
-				</div>
-
-				<div class="actions field--full">
-					<button type="reset" class="button button--ghost">Clear</button>
-					<button type="submit" class="button button--primary">Save Customer</button>
-				</div>
-			</form>
-		</section>
-		<footer class="site-footer">All rights reserved ESPE - Nelson Andino</footer>
-	</main>
-	<script src="../public/js/ageValidator.js"></script>
+    <h1>Add New CellPhone</h1>
+    <form action="../Controller/addCellPhone.php" method="POST">
+        <div>
+            <label>Brand:</label>
+            <input type="text" name="brand" required>
+        </div>
+        <div>
+            <label>Model:</label>
+            <input type="text" name="model" required>
+        </div>
+        <div>
+            <label>Price:</label>
+            <input type="number" step="0.01" name="price" required>
+        </div>
+        <div>
+            <label>Screen:</label>
+            <input type="text" name="screen" required>
+        </div>
+        <div>
+            <label>RAM:</label>
+            <input type="text" name="ram" required>
+        </div>
+        <div>
+            <label>Storage:</label>
+            <input type="text" name="storage" required>
+        </div>
+        <div>
+            <label>Camera:</label>
+            <input type="text" name="camera" required>
+        </div>
+        <div>
+            <label>Battery:</label>
+            <input type="text" name="battery" required>
+        </div>
+        <button type="submit">Save Cellphone</button>
+    </form>
 </body>
 </html>

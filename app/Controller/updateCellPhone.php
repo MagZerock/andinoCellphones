@@ -1,34 +1,28 @@
 <?php
 require_once __DIR__ . '/../../vendor/autoload.php';
-require_once __DIR__ . '/../config/database.php';
-require_once __DIR__ . '/../model/Product.php';
+require_once __DIR__ . '/../Config/conection.php';
+require_once __DIR__ . '/../Models/CellPhone.php';
 
-use App\model\Product;
+use App\Models\CellPhone;
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'])) {
     try {
-        $model = $_POST['model'] ?? null;
-        $product = Product::findByModel($model);
-
-        if (!$product) {
-            header('Location: ../controller/viewProducts.php');
-            exit();
+        $cellphone = CellPhone::find($_POST['id']);
+        if ($cellphone) {
+            $cellphone->update([
+                'brand'   => $_POST['brand'],
+                'model'   => $_POST['model'],
+                'price'   => $_POST['price'],
+                'screen'  => $_POST['screen'],
+                'ram'     => $_POST['ram'],
+                'storage' => $_POST['storage'],
+                'camera'  => $_POST['camera'],
+                'battery' => $_POST['battery']
+            ]);
         }
-
-        $product->update([
-            'brand'   => $_POST['brand']   ?? $product->brand,
-            'model'   => $model            ?? $product->model,
-            'price'   => $_POST['price']   ?? $product->price,
-            'screen'  => $_POST['screen']  ?? $product->screen,
-            'ram'     => $_POST['ram']     ?? $product->ram,
-            'storage' => $_POST['storage'] ?? $product->storage,
-            'camera'  => $_POST['camera']  ?? $product->camera,
-            'battery' => $_POST['battery'] ?? $product->battery
-        ]);
-
-        header('Location: ../view/saved.html');
+        header("Location: viewCellPhones.php");
         exit();
-    } catch (\Throwable $e) {
-        die('Error updating: ' . $e->getMessage());
+    } catch (\Exception $e) {
+        die("Error updating: " . $e->getMessage());
     }
 }

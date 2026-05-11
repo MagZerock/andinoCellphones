@@ -1,5 +1,4 @@
 <?php
-session_start();
-
-require_once __DIR__ . '/app/Vista/index.html';
+header("Location: app/Controller/viewCellPhones.php");
+exit();
 ?>
