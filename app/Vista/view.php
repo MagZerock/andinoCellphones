@@ -11,7 +11,7 @@
             <span class="navbar__logo">Cellphone System</span>
             <ul class="navbar__menu">
                 <li><a href="../Controller/viewCellPhones.php" class="active">View Cellphones</a></li>
-				<li><a href="./form.html">Add CellPhone</a></li>
+				<li><a href="../Vista/form.html">Add CellPhone</a></li>
             </ul>
         </div>
     </nav>
@@ -27,7 +27,6 @@
                 <th>Storage</th>
                 <th>Camera</th>
                 <th>Battery</th>
-                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -42,18 +41,11 @@
                     <td><?= htmlspecialchars($phone->storage) ?></td>
                     <td><?= htmlspecialchars($phone->camera) ?></td>
                     <td><?= htmlspecialchars($phone->battery) ?></td>
-                    <td>
-                        <a href="../Controller/editCellPhone.php?id=<?= $phone->id ?>">Edit</a>
-                        <form action="../Controller/deleteCellPhone.php" method="POST" style="display:inline;">
-                            <input type="hidden" name="id" value="<?= $phone->id ?>">
-                            <button type="submit" onclick="return confirm('Are you sure?')">Delete</button>
-                        </form>
-                    </td>
                 </tr>
                 <?php endforeach; ?>
             <?php else: ?>
                 <tr>
-                    <td colspan="9" style="text-align:center;">No cellphones found.</td>
+                    <td colspan="8" style="text-align:center;">No cellphones found.</td>
                 </tr>
             <?php endif; ?>
         </tbody>
